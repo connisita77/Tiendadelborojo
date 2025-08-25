@@ -234,24 +234,3 @@ const analisisStock = db.productos.find().toArray().map(function(producto) {
   };
 });
 
-// =====================================================
-// RESUMEN FINAL
-// =====================================================
-//
-// 🎯 EXPLICACIÓN: Las User Defined Functions (UDF) en MongoDB
-// proporcionan una forma poderosa de encapsular lógica de negocio
-// y reutilizar código en múltiples consultas y operaciones.
-//
-// 💰 BENEFICIOS PARA LA TIENDA:
-// - Código reutilizable y mantenible
-// - Lógica de negocio centralizada
-// - Consistencia en cálculos y validaciones
-// - Fácil actualización de reglas de negocio
-// - Mejor rendimiento en operaciones repetitivas
-//
-// 🚀 APLICACIONES FUTURAS:
-// - Cálculos de impuestos y comisiones
-// - Validaciones de reglas de negocio
-// - Algoritmos de recomendación
-// - Análisis predictivo de ventas
-// - Gestión de promociones dinámicas 
