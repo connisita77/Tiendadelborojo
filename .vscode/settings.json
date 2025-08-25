@@ -1,5 +1,6 @@
 {
     "conventionalCommits.scopes": [
-        "remove a archive and create a new one"
+        "remove a archive and create a new one",
+        "adding the updates on the code with the mongosh"
     ]
 }
