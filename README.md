@@ -766,3 +766,414 @@ Desarrollado como parte del taller de NO-SQL Documental con MongoDB para gestió
   Developed with ❤️ by Estudiantes de Bases de Datos<br>
   🔥 <b><a href="https://github.com/DanielSantiagoV">Visit my GitHub</a></b> 🚀
 </p>
+
+---
+
+## 📚 **LISTADO DE EJERCICIOS DESARROLLADOS**
+
+### 🎯 **TEMA 1: OPERACIONES CRUD BÁSICAS**
+
+#### **Inserción (INSERT)**
+- ✅ **Ejercicio 1.1**: Insertar producto "Chocolatina de borojó" con categoría "Snack"
+- ✅ **Ejercicio 1.2**: Insertar cliente "Mario Mendoza" con preferencias energéticas
+- **Archivo**: `scripts/01_insercion.js`
+- **Descripción**: Implementación de inserción de nuevos productos y clientes en el sistema
+
+#### **Lectura (READ)**
+- ✅ **Ejercicio 2.1**: Consultar productos con stock mayor a 20 unidades
+- ✅ **Ejercicio 2.2**: Encontrar clientes sin historial de compras
+- **Archivo**: `scripts/02_lectura.js`
+- **Descripción**: Consultas de lectura con filtros y condiciones específicas
+
+#### **Actualización (UPDATE)**
+- ✅ **Ejercicio 3.1**: Aumentar stock de "Borojó deshidratado" en 10 unidades
+- ✅ **Ejercicio 3.2**: Agregar tag "bajo azúcar" a productos de categoría "Bebida"
+- **Archivo**: `scripts/03_actualizacion.js`
+- **Descripción**: Modificación de datos existentes con operadores de actualización
+
+#### **Eliminación (DELETE)**
+- ✅ **Ejercicio 4.1**: Eliminar cliente con email "juan@email.com"
+- ✅ **Ejercicio 4.2**: Eliminar productos con stock menor a 5 unidades
+- **Archivo**: `scripts/04_eliminacion.js`
+- **Descripción**: Eliminación de documentos con validaciones y verificaciones
+
+### 🔍 **TEMA 2: EXPRESIONES REGULARES (REGEX)**
+
+#### **Búsquedas con Patrones**
+- ✅ **Ejercicio 5.1**: Productos cuyo nombre empiece por "Boro"
+- ✅ **Ejercicio 5.2**: Productos con nombre que contenga "con" como palabra completa
+- ✅ **Ejercicio 5.3**: Clientes con nombres que contengan la letra "z"
+- **Archivo**: `scripts/05_expresiones_regulares.js`
+- **Descripción**: Implementación de búsquedas avanzadas usando expresiones regulares
+
+### 📊 **TEMA 3: OPERADORES DE ARRAYS**
+
+#### **Consultas sobre Arrays**
+- ✅ **Ejercicio 6.1**: Clientes con preferencia "natural" en sus tags
+- ✅ **Ejercicio 6.2**: Productos con tags "natural" y "orgánico" usando `$all`
+- ✅ **Ejercicio 6.3**: Productos con más de un tag usando `$size`
+- **Archivo**: `scripts/06_operadores_arrays.js`
+- **Descripción**: Consultas complejas sobre campos de tipo array
+
+### 🚀 **TEMA 4: AGGREGATION FRAMEWORK**
+
+#### **Pipelines de Agregación**
+- ✅ **Ejercicio 7.1**: Productos más vendidos (suma total de unidades)
+- ✅ **Ejercicio 7.2**: Agrupación de clientes por cantidad de compras
+- ✅ **Ejercicio 7.3**: Total de ventas por mes usando `$group` y `$month`
+- ✅ **Ejercicio 7.4**: Promedio de precios por categoría
+- ✅ **Ejercicio 7.5**: Top 3 productos con mayor stock
+- **Archivo**: `scripts/07_aggregation_framework.js`
+- **Descripción**: Análisis de datos usando pipelines de agregación avanzados
+
+### ⚙️ **TEMA 5: FUNCIONES PERSONALIZADAS**
+
+#### **Funciones en system.js**
+- ✅ **Ejercicio 8.1**: Función `calcularDescuento(precio, porcentaje)`
+- ✅ **Ejercicio 8.2**: Función `clienteActivo(idCliente)` para clientes con >3 compras
+- ✅ **Ejercicio 8.3**: Función `verificarStock(productoId, cantidadDeseada)`
+- **Archivo**: `scripts/08_user_defined_functions.js`
+- **Descripción**: Creación de funciones personalizadas para operaciones comerciales
+
+### 🔄 **TEMA 6: TRANSACCIONES**
+
+#### **Operaciones Atómicas**
+- ✅ **Ejercicio 9.1**: Simular venta con descuento de stock y registro de venta
+- ✅ **Ejercicio 9.2**: Entrada de nuevo inventario con actualización de stock
+- ✅ **Ejercicio 9.3**: Operación de devolución con reversión de cambios
+- **Archivo**: `scripts/09_transacciones.js`
+- **Descripción**: Implementación de transacciones para operaciones comerciales complejas
+
+### 📈 **TEMA 7: INDEXACIÓN**
+
+#### **Optimización de Consultas**
+- ✅ **Ejercicio 10.1**: Índice en campo `nombre` de productos
+- ✅ **Ejercicio 10.2**: Índice compuesto en `categoria` y `precio`
+- ✅ **Ejercicio 10.3**: Índice en campo `email` de clientes
+- ✅ **Ejercicio 10.4**: Uso de `explain()` para verificar índices
+- **Archivo**: `scripts/10_indexacion.js`
+- **Descripción**: Creación y verificación de índices para optimizar consultas
+
+---
+
+## 💡 **EXPLICACIÓN DE CADA FUNCIONALIDAD DOCUMENTADA**
+
+### 🌿 **Sistema de Productos**
+- **Propósito**: Gestión completa del catálogo de productos derivados del borojó
+- **Características**: Categorización, precios, stock, tags descriptivos
+- **Beneficios**: Control de inventario, análisis de ventas, gestión de proveedores
+- **Casos de Uso**: Catálogo online, gestión de stock, análisis de productos más vendidos
+
+### 👥 **Gestión de Clientes**
+- **Propósito**: Base de datos de clientes con historial de compras y preferencias
+- **Características**: Perfiles personalizados, seguimiento de compras, segmentación
+- **Beneficios**: Marketing dirigido, recomendaciones personalizadas, fidelización
+- **Casos de Uso**: Programas de lealtad, campañas personalizadas, análisis de comportamiento
+
+### 💰 **Control de Ventas**
+- **Propósito**: Registro detallado de todas las transacciones comerciales
+- **Características**: Fechas, productos, cantidades, totales, clientes
+- **Beneficios**: Análisis financiero, tendencias de ventas, control de inventario
+- **Casos de Uso**: Reportes de ventas, análisis de rentabilidad, control de flujo de caja
+
+### 🏪 **Gestión de Proveedores**
+- **Propósito**: Directorio de proveedores especializados por categoría
+- **Características**: Contactos, productos suministrados, especialización
+- **Beneficios**: Cadena de suministro, negociaciones, calidad de productos
+- **Casos de Uso**: Gestión de compras, evaluación de proveedores, control de calidad
+
+### 📦 **Control de Inventario**
+- **Propósito**: Seguimiento detallado del stock con lotes y fechas
+- **Características**: Trazabilidad, control de lotes, fechas de entrada
+- **Beneficios**: Gestión logística, control de calidad, optimización de stock
+- **Casos de Uso**: Control de stock mínimo, rotación de inventario, gestión de lotes
+
+### 🔍 **Búsquedas Avanzadas con Regex**
+- **Propósito**: Búsquedas inteligentes en catálogos y bases de datos
+- **Características**: Patrones flexibles, búsquedas parciales, filtros complejos
+- **Beneficios**: Experiencia de usuario mejorada, búsquedas eficientes
+- **Casos de Uso**: Búsqueda de productos, filtros avanzados, categorización automática
+
+### 📊 **Análisis con Aggregation Framework**
+- **Propósito**: Análisis profundo de datos comerciales y tendencias
+- **Características**: Pipelines personalizables, agrupaciones, cálculos estadísticos
+- **Beneficios**: Insights comerciales, toma de decisiones basada en datos
+- **Casos de Uso**: Reportes de ventas, análisis de tendencias, métricas de negocio
+
+### ⚙️ **Funciones Personalizadas**
+- **Propósito**: Automatización de operaciones comerciales frecuentes
+- **Características**: Cálculos automáticos, validaciones, operaciones complejas
+- **Beneficios**: Eficiencia operativa, reducción de errores, consistencia
+- **Casos de Uso**: Cálculo de descuentos, validación de stock, análisis de clientes
+
+### 🔄 **Transacciones**
+- **Propósito**: Garantizar integridad en operaciones comerciales complejas
+- **Características**: Operaciones atómicas, rollback automático, consistencia
+- **Beneficios**: Integridad de datos, confiabilidad del sistema
+- **Casos de Uso**: Procesamiento de ventas, gestión de inventario, operaciones de devolución
+
+### 📈 **Indexación**
+- **Propósito**: Optimización del rendimiento de consultas frecuentes
+- **Características**: Índices simples y compuestos, análisis de rendimiento
+- **Beneficios**: Consultas más rápidas, mejor experiencia de usuario
+- **Casos de Uso**: Búsquedas frecuentes, filtros por categoría, consultas de clientes
+
+---
+
+## 📸 **CAPTURAS DE PANTALLA DE RESPUESTA A LAS CONSULTAS**
+
+### 🏗️ **1. CREACIÓN DE COLECCIONES**
+
+#### Creación de Colección Productos
+![Creación de Colección Productos](./assets/crearcoleccionproductos.png)
+
+#### Creación de Colección Clientes
+![Creación de Colección Clientes](./assets/image-2.png)
+
+#### Creación de Colección Ventas
+![Creación de Colección Ventas](./assets/crearcollecionesventas.png)
+
+#### Creación de Colección Proveedores
+![Creación de Colección Proveedores](./assets/crearcoleccionesproveedores.png)
+
+#### Creación de Colección Inventario
+![Creación de Colección Inventario](./assets/crearcoleccionesinvenatario.png)
+
+#### Verificación de Todas las Colecciones
+![Verificación de Colecciones](./assets/verificarcoleccionespng)
+
+### 📥 **2. INSERCIÓN DE DATOS**
+
+#### Inserción General de Documentos
+![Inserción de Documentos](./assets/insertardocumentos.png)
+
+#### Inserción del Producto "Chocolatina de borojó"
+![Inserción Chocolatina](./assets/insercion_chocolatina.png)
+
+#### Inserción del Cliente "Mario Mendoza"
+![Inserción Mario Mendoza](./assets/insercion_mariomendoza.png)
+
+### 📖 **3. OPERACIONES DE LECTURA**
+
+#### Consulta de Productos con Stock > 20
+![Consulta Productos Stock Alto](./assets/image-13.png)
+
+#### Consulta de Clientes sin Compras
+![Consulta Clientes sin Compras](./assets/image-15.png)
+
+#### Verificación de Consultas de Lectura
+![Verificación de Lecturas](./assets/verificaionconsultalectura.png)
+
+#### Consulta de Clientes
+![Consulta de Clientes](./assets/lectura_consultaclientes.png)
+
+#### Consulta de Productos
+![Consulta de Productos](./assets/lectura_consultaproductos.png)
+
+#### Verificación de Lectura
+![Verificación de Lectura](./assets/lectura_verificacion.png)
+
+### 🔄 **4. OPERACIONES DE ACTUALIZACIÓN**
+
+#### Aumentar Stock de "Borojó deshidratado" en 10 unidades
+![Aumento de Stock](./assets/image-17.png)
+
+#### Agregar Tag "bajo azúcar" a Productos de Categoría "Bebida"
+![Agregar Tag Bajo Azúcar](./assets/image-18.png)
+
+### 🗑️ **5. OPERACIONES DE ELIMINACIÓN**
+
+#### Eliminar Cliente con Email "juan@email.com"
+![Eliminación de Cliente](./assets/image-19.png)
+
+#### Verificación de Eliminación (0 resultados)
+![Verificación de Eliminación](./assets/image-20.png)
+
+#### Eliminar Productos con Stock < 5
+![Eliminación por Stock Bajo](./assets/image-21.png)
+
+#### Verificación de Productos con Stock < 5 (debe ser 0)
+![Verificación Stock Bajo](./assets/image-22.png)
+
+### 🔍 **6. CONSULTAS CON EXPRESIONES REGULARES (REGEX)**
+
+#### Productos cuyo nombre empiece por "Boro"
+![Regex Empieza con Boro](./assets/image-23.png)
+
+#### Productos cuyo nombre contenga "con" como palabra completa
+![Regex Contiene Con](./assets/image-24.png)
+
+#### Clientes cuyo nombre tenga la letra "z"
+![Regex Nombre con Z](./assets/image-5.png)
+
+---
+
+## 🚀 **INSTRUCCIONES PARA EJECUTAR LOS SCRIPTS**
+
+### 📋 **Requisitos Previos**
+1. **MongoDB instalado** y ejecutándose en tu sistema
+2. **Base de datos creada** con nombre `tienda_borojo`
+3. **Colecciones creadas** para cada entidad del sistema
+4. **Datos importados** desde los archivos JSON proporcionados
+
+### 🔧 **Pasos de Configuración**
+
+#### **Paso 1: Conectar a MongoDB**
+```bash
+mongosh
+```
+
+#### **Paso 2: Crear y Usar Base de Datos**
+```bash
+use tienda_borojo
+```
+
+#### **Paso 3: Crear Colecciones**
+```javascript
+// Crear colección de productos
+db.createCollection("productos")
+
+// Crear colección de clientes
+db.createCollection("clientes")
+
+// Crear colección de ventas
+db.createCollection("ventas")
+
+// Crear colección de proveedores
+db.createCollection("proveedores")
+
+// Crear colección de inventario
+db.createCollection("inventario")
+```
+
+#### **Paso 4: Importar Datos**
+```bash
+# Importar productos
+mongoimport --db tienda_borojo --collection productos --file data/productos.json --jsonArray
+
+# Importar clientes
+mongoimport --db tienda_borojo --collection clientes --file data/clientes.json --jsonArray
+
+# Importar ventas
+mongoimport --db tienda_borojo --collection ventas --file data/ventas.json --jsonArray
+
+# Importar proveedores
+mongoimport --db tienda_borojo --collection proveedores --file data/proveedores.json --jsonArray
+
+# Importar inventario
+mongoimport --db tienda_borojo --collection inventario --file data/inventario.json --jsonArray
+```
+
+### 📝 **Ejecución de Scripts**
+
+#### **Script 1: Inserción**
+```bash
+# Ejecutar comandos de inserción
+# Copiar y pegar los comandos del archivo scripts/01_insercion.js
+```
+
+#### **Script 2: Lectura**
+```bash
+# Ejecutar comandos de lectura
+# Copiar y pegar los comandos del archivo scripts/02_lectura.js
+```
+
+#### **Script 3: Actualización**
+```bash
+# Ejecutar comandos de actualización
+# Copiar y pegar los comandos del archivo scripts/03_actualizacion.js
+```
+
+#### **Script 4: Eliminación**
+```bash
+# Ejecutar comandos de eliminación
+# Copiar y pegar los comandos del archivo scripts/04_eliminacion.js
+```
+
+#### **Script 5: Expresiones Regulares**
+```bash
+# Ejecutar consultas con regex
+# Copiar y pegar los comandos del archivo scripts/05_expresiones_regulares.js
+```
+
+### ⚠️ **Notas Importantes**
+
+1. **Ejecutar en orden**: Los scripts están numerados para ejecutarse secuencialmente
+2. **Verificar resultados**: Cada operación debe confirmarse antes de continuar
+3. **Backup de datos**: Hacer respaldo antes de operaciones de eliminación
+4. **Permisos**: Asegurar permisos de escritura en la base de datos
+
+### 🔍 **Verificación de Operaciones**
+
+#### **Verificar Inserción**
+```javascript
+// Verificar que se insertó el producto
+db.productos.find({"_id": 11})
+
+// Verificar que se insertó el cliente
+db.clientes.find({"_id": 11})
+```
+
+#### **Verificar Actualización**
+```javascript
+// Verificar stock actualizado
+db.productos.find({"nombre": "Borojó deshidratado"})
+
+// Verificar tags agregados
+db.productos.find({"categoria": "Bebida"})
+```
+
+#### **Verificar Eliminación**
+```javascript
+// Verificar cliente eliminado
+db.clientes.find({"email": "juan@email.com"})
+
+// Verificar productos con stock bajo
+db.productos.find({"stock": {$lt: 5}})
+```
+
+---
+
+## 🎉 **CONCLUSIÓN**
+
+Este proyecto "La Tienda del Borojó" demuestra la implementación completa de un sistema de gestión comercial usando MongoDB. A través de las **5 colecciones principales**, **10 scripts de funcionalidades** y **expresiones regulares avanzadas**, hemos creado una base sólida para la gestión de inventario, clientes y ventas.
+
+### 🌟 **Logros Principales**
+- ✅ **Sistema CRUD completo** para todas las entidades comerciales
+- ✅ **Búsquedas inteligentes** con expresiones regulares
+- ✅ **Análisis de datos** usando Aggregation Framework
+- ✅ **Funciones personalizadas** para automatización
+- ✅ **Transacciones** para operaciones complejas
+- ✅ **Indexación** para optimización de rendimiento
+
+### 🚀 **Próximos Pasos**
+- Implementar interfaz de usuario web
+- Agregar autenticación y autorización
+- Integrar con sistemas de pago
+- Implementar reportes avanzados
+- Agregar funcionalidades de notificaciones
+
+### 💡 **Aprendizajes Clave**
+- MongoDB es ideal para sistemas comerciales flexibles
+- Las expresiones regulares optimizan búsquedas de texto
+- La estructura de documentos simplifica consultas complejas
+- Las transacciones garantizan integridad de datos
+- La indexación mejora significativamente el rendimiento
+
+---
+
+*Este proyecto cumple con todos los requerimientos del taller y proporciona una base sólida para sistemas de gestión comercial con MongoDB.*
+
+
+---
+### Información de Contacto
+- **GitHub**: [@DanielSantiagoV](https://github.com/DanielSantiagoV)
+- **GitHub**: [@Sebastian Ardila](https://github.com/Jharmo05)
+- **GitHub**: [@Connie Carrillo](https://github.com/connisita77) 
+
+---
+
+<p align="center">
+  Developed with ❤️ by Estudiantes de Bases de Datos<br>
+  🔥 <b><a href="https://github.com/DanielSantiagoV">Visit my GitHub</a></b> 🚀
+</p>
