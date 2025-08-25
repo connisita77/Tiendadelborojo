@@ -10,9 +10,31 @@
   <img src="https://img.shields.io/badge/Database-NoSQL-darkgreen?style=for-the-badge&logo=database&logoColor=white" alt="NoSQL">
   <img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" alt="MIT License">
   <img src="https://img.shields.io/badge/Status-Completed-green?style=for-the-badge" alt="Completed">
+  <img src="https://img.shields.io/badge/Version-1.0-blue?style=for-the-badge" alt="Version">
 </p>
 
 > 🧠 Exploramos cómo implementar "La Tienda del Borojó", un sistema completo de gestión de inventario y ventas para productos derivados del borojó en el Pacífico colombiano, utilizando MongoDB y expresiones regulares para optimizar operaciones comerciales.
+
+---
+
+## 📋 **TABLA DE CONTENIDOS**
+
+- [📚 Investigación](#-investigación)
+- [🧩 Diseño del Modelo](#-diseño-del-modelo)
+- [📁 Estructura de Archivos](#-estructura-de-archivos)
+- [🗄️ Base de Datos](#️-base-de-datos)
+- [🛠️ Configuración](#️-configuración-de-la-base-de-datos)
+- [🧪 Ejemplos de Documentos](#-ejemplos-de-documentos-json)
+- [🚀 Funcionalidades Implementadas](#-funcionalidades-implementadas)
+- [📋 Cómo Usar](#-cómo-usar)
+- [🔍 Ejemplos de Operaciones con Regex](#-ejemplos-de-operaciones-con-expresiones-regulares)
+- [🔗 Relaciones entre Colecciones](#-relaciones-entre-colecciones)
+- [🎯 Casos de Uso Básicos](#-casos-de-uso-básicos)
+- [📚 Listado de Ejercicios Desarrollados](#-listado-de-ejercicios-desarrollados)
+- [💡 Explicación de Cada Funcionalidad](#-explicación-de-cada-funcionalidad-documentada)
+- [📸 Capturas de Pantalla](#-capturas-de-pantalla-de-respuesta-a-las-consultas)
+- [🚀 Instrucciones para Ejecutar Scripts](#️-instrucciones-para-ejecutar-los-scripts)
+- [🎉 Conclusión](#-conclusión)
 
 ---
 
@@ -80,41 +102,67 @@ La decisión clave en MongoDB es cuándo anidar datos (embeber) y cuándo crear 
 
 ## 📁 Estructura de Archivos
 
-- **`productos.json`** - Archivo JSON con registros de productos derivados del borojó
-- **`clientes.json`** - Archivo JSON con registros de clientes registrados
-- **`ventas.json`** - Archivo JSON con registros de transacciones comerciales
-- **`proveedores.json`** - Archivo JSON con registros de proveedores especializados
-- **`inventario.json`** - Archivo JSON con registros de control de stock
-- **`README.md`** - Este archivo de documentación
-- **`taller.txt`** - Especificaciones técnicas del proyecto
+```
+📁 Tiendadelborojo/
+├── 📁 assets/                    # Imágenes y capturas de pantalla
+├── 📁 data/                      # Archivos JSON de datos
+│   ├── productos.json           # Catálogo de productos
+│   ├── clientes.json            # Base de clientes
+│   ├── ventas.json              # Registro de ventas
+│   ├── proveedores.json         # Directorio de proveedores
+│   └── inventario.json          # Control de stock
+├── 📁 scripts/                   # Scripts de MongoDB
+│   ├── 01_insercion.js          # Operaciones de inserción
+│   ├── 02_lectura.js            # Operaciones de lectura
+│   ├── 03_actualizacion.js      # Operaciones de actualización
+│   ├── 04_eliminacion.js        # Operaciones de eliminación
+│   ├── 05_expresiones_regulares.js # Consultas con regex
+│   ├── 06_operadores_arrays.js  # Operadores de arrays
+│   ├── 07_aggregation_framework.js # Aggregation Framework
+│   ├── 08_user_defined_functions.js # Funciones personalizadas
+│   ├── 09_transacciones.js      # Transacciones
+│   └── 10_indexacion.js         # Indexación
+├── 📄 README.md                  # Documentación principal
+├── 📄 taller.txt                 # Especificaciones del proyecto
+└── 📄 coleccion.js               # Configuración de colecciones
+```
 
-## 📦 Archivos JSON para Importación
+### 📦 Archivos JSON para Importación
 
-### Colección: `productos`
-- **Archivo:** `productos.json`
+#### Colección: `productos`
+- **Archivo:** `data/productos.json`
 - **Contenido:** Catálogo completo de productos derivados del borojó con categorías, precios y stock
+- **Registros:** 10+ productos con diferentes categorías y características
 
-### Colección: `clientes`
-- **Archivo:** `clientes.json`
+#### Colección: `clientes`
+- **Archivo:** `data/clientes.json`
 - **Contenido:** Base de datos de clientes con historial de compras y preferencias
+- **Registros:** 10+ clientes con perfiles variados
 
-### Colección: `ventas`
-- **Archivo:** `ventas.json`
+#### Colección: `ventas`
+- **Archivo:** `data/ventas.json`
 - **Contenido:** Registro de todas las transacciones comerciales con detalles de productos y fechas
+- **Registros:** 10+ ventas con diferentes productos y cantidades
 
-### Colección: `proveedores`
-- **Archivo:** `proveedores.json`
+#### Colección: `proveedores`
+- **Archivo:** `data/proveedores.json`
 - **Contenido:** Directorio de proveedores especializados en diferentes categorías de productos
+- **Registros:** 7+ proveedores especializados
 
-### Colección: `inventario`
-- **Archivo:** `inventario.json`
+#### Colección: `inventario`
+- **Archivo:** `data/inventario.json`
 - **Contenido:** Control de stock con lotes, cantidades y fechas de entrada
+- **Registros:** 10+ registros de inventario con trazabilidad
 
 ## 🗄️ Base de Datos
 
 **Nombre de la Base de Datos:** `tienda_borojo`
 
 **Colecciones:** `productos`, `clientes`, `ventas`, `proveedores`, `inventario`
+
+**Versión de MongoDB:** 6.0+
+
+---
 
 ## 🛠️ Configuración de la Base de Datos
 
@@ -130,22 +178,56 @@ use tienda_borojo
 
 ### 3. Crear las Colecciones
 Crear las colecciones para almacenar los documentos:
-- `productos`
-- `clientes`
-- `ventas`
-- `proveedores`
-- `inventario`
+```javascript
+// Crear colección de productos
+db.createCollection("productos")
+
+// Crear colección de clientes
+db.createCollection("clientes")
+
+// Crear colección de ventas
+db.createCollection("ventas")
+
+// Crear colección de proveedores
+db.createCollection("proveedores")
+
+// Crear colección de inventario
+db.createCollection("inventario")
+```
 
 ### 4. Crear Índices para Optimizar Consultas
 Crear índices en los campos principales para mejorar el rendimiento de las consultas:
-- Índice para búsqueda por nombre en productos
-- Índice para filtros por categoría en productos
-- Índice para filtros por email en clientes
-- Índice para filtros por fecha en ventas
-- Índice compuesto para búsquedas eficientes
+```javascript
+// Índice para búsqueda por nombre en productos
+db.productos.createIndex({ "nombre": 1 })
+
+// Índice para filtros por categoría en productos
+db.productos.createIndex({ "categoria": 1 })
+
+// Índice para filtros por email en clientes
+db.clientes.createIndex({ "email": 1 })
+
+// Índice para filtros por fecha en ventas
+db.ventas.createIndex({ "fecha": 1 })
+
+// Índice compuesto para búsquedas eficientes
+db.productos.createIndex({ "categoria": 1, "precio": 1 })
+```
 
 ### 5. Verificar la Creación
-Verificar que la base de datos y colecciones se crearon correctamente
+Verificar que la base de datos y colecciones se crearon correctamente:
+```javascript
+// Ver base de datos actual
+db
+
+// Ver colecciones disponibles
+show collections
+
+// Verificar índices creados
+db.productos.getIndexes()
+```
+
+---
 
 ## 🧪 Ejemplos de Documentos JSON
 
@@ -209,6 +291,8 @@ Verificar que la base de datos y colecciones se crearon correctamente
 }
 ```
 
+---
+
 ## 🚀 Funcionalidades Implementadas
 
 ### 1. CRUD (Crear, Leer, Actualizar, Eliminar)
@@ -235,6 +319,8 @@ Verificar que la base de datos y colecciones se crearon correctamente
 ✅ **Validación de Stock:** Cantidades no negativas
 ✅ **Validación de Campos Requeridos:** Todos los campos obligatorios
 ✅ **Validación de Referencias:** Integridad referencial entre colecciones
+
+---
 
 ## 📋 Cómo Usar
 
@@ -284,24 +370,36 @@ Crear índices en los campos principales para optimizar las consultas:
 #### Opción B: Usando línea de comandos
 ```bash
 # Importar productos
-mongoimport --db tienda_borojo --collection productos --file productos.json --jsonArray
+mongoimport --db tienda_borojo --collection productos --file data/productos.json --jsonArray
 
 # Importar clientes
-mongoimport --db tienda_borojo --collection clientes --file clientes.json --jsonArray
+mongoimport --db tienda_borojo --collection clientes --file data/clientes.json --jsonArray
 
 # Importar ventas
-mongoimport --db tienda_borojo --collection ventas --file ventas.json --jsonArray
+mongoimport --db tienda_borojo --collection ventas --file data/ventas.json --jsonArray
 
 # Importar proveedores
-mongoimport --db tienda_borojo --collection proveedores --file proveedores.json --jsonArray
+mongoimport --db tienda_borojo --collection proveedores --file data/proveedores.json --jsonArray
 
 # Importar inventario
-mongoimport --db tienda_borojo --collection inventario --file inventario.json --jsonArray
+mongoimport --db tienda_borojo --collection inventario --file data/inventario.json --jsonArray
 ```
 
 ### 6. Verificar la Importación
 
-Verificar que los datos se importaron correctamente contando los documentos y revisando algunos ejemplos
+Verificar que los datos se importaron correctamente contando los documentos y revisando algunos ejemplos:
+```javascript
+// Contar documentos en cada colección
+db.productos.countDocuments()
+db.clientes.countDocuments()
+db.ventas.countDocuments()
+db.proveedores.countDocuments()
+db.inventario.countDocuments()
+
+// Ver algunos ejemplos
+db.productos.find().limit(3)
+db.clientes.find().limit(3)
+```
 
 ### 7. Probar las Funcionalidades
 
@@ -311,6 +409,8 @@ Ahora puedes probar las consultas básicas en MongoDB para:
 - Filtrar por stock
 - Buscar por nombre
 - Contar recursos
+
+---
 
 ## 🔍 Ejemplos de Operaciones con Expresiones Regulares
 
@@ -426,6 +526,8 @@ db.inventario.find({ "entrada": { "$regex": "2025-06-0[1-3]" } })
 ```
 **Propósito**: Filtrar inventario por fechas de entrada para control logístico.
 
+---
+
 ## 🔗 Relaciones entre Colecciones
 
 ### 📊 Diagrama de Relaciones
@@ -470,6 +572,8 @@ proveedores (1) ←→ (N) productos
 - **Espacio**: Aumenta ligeramente el uso de almacenamiento
 - **Actualización**: Requiere lógica para mantener consistencia
 
+---
+
 ## 🎯 Casos de Uso Básicos
 
 ### 🔍 Búsquedas Simples
@@ -488,7 +592,7 @@ db.clientes.countDocuments({ "preferencias": "natural" })
 // Productos ordenados por nombre
 db.productos.find().sort({ "nombre": 1 })
 
-// Ventas ordenadas por fecha (más recientes primero)
+// Álbumes ordenados por año (más recientes primero)
 db.ventas.find().sort({ "fecha": -1 })
 ```
 
@@ -500,6 +604,8 @@ db.productos.find().limit(5)
 // Mostrar productos del 6 al 10
 db.productos.find().skip(5).limit(5)
 ```
+
+---
 
 ## 🚀 Funcionalidades Básicas
 
@@ -532,6 +638,8 @@ db.productos.updateOne(
 db.productos.deleteOne({ "nombre": "Nuevo Producto" })
 ```
 
+---
+
 ## 📝 Notas Importantes
 
 ### 🔄 Mantenimiento Básico
@@ -551,6 +659,8 @@ db.inventario.countDocuments()
 // Eliminar productos sin stock
 db.productos.deleteMany({ "stock": 0 })
 ```
+
+---
 
 ## 📊 Datos de Ejemplo Incluidos
 
@@ -595,6 +705,8 @@ Los archivos JSON incluyen una gran variedad de:
 
 Cada recurso tiene diferentes categorías, precios y stock para probar todas las funcionalidades de filtrado y búsqueda.
 
+---
+
 ## 🎯 Casos de Uso en La Tienda del Borojó
 
 Estas consultas con regex son fundamentales para:
@@ -607,6 +719,8 @@ Estas consultas con regex son fundamentales para:
 - **Categorización automática** de productos
 - **Detección de patrones** en nombres y descripciones
 
+---
+
 ## 📝 Notas Importantes
 
 1. **Nivel Avanzado:** Este proyecto está diseñado para usuarios intermedios/avanzados en MongoDB
@@ -617,406 +731,34 @@ Estas consultas con regex son fundamentales para:
 
 ---
 
-## 📚 **LISTADO DE EJERCICIOS DESARROLLADOS**
+## 🎯 Resumen del Proyecto
 
-### 🎯 **TEMA 1: OPERACIONES CRUD BÁSICAS**
+Este proyecto implementa un sistema completo de gestión comercial para "La Tienda del Borojó" usando MongoDB con:
 
-#### **Inserción (INSERT)**
-- ✅ **Ejercicio 1.1**: Insertar producto "Chocolatina de borojó" con categoría "Snack"
-- ✅ **Ejercicio 1.2**: Insertar cliente "Mario Mendoza" con preferencias energéticas
-- **Archivo**: `scripts/01_insercion.js`
-- **Descripción**: Implementación de inserción de nuevos productos y clientes en el sistema
+- **5 colecciones principales**: productos, clientes, ventas, proveedores e inventario
+- **Consultas con expresiones regulares** para búsquedas avanzadas
+- **Operaciones CRUD básicas** para gestionar datos comerciales
+- **Estructura simple** y fácil de entender para gestión de inventario
 
-#### **Lectura (READ)**
-- ✅ **Ejercicio 2.1**: Consultar productos con stock mayor a 20 unidades
-- ✅ **Ejercicio 2.2**: Encontrar clientes sin historial de compras
-- **Archivo**: `scripts/02_lectura.js`
-- **Descripción**: Consultas de lectura con filtros y condiciones específicas
-
-#### **Actualización (UPDATE)**
-- ✅ **Ejercicio 3.1**: Aumentar stock de "Borojó deshidratado" en 10 unidades
-- ✅ **Ejercicio 3.2**: Agregar tag "bajo azúcar" a productos de categoría "Bebida"
-- **Archivo**: `scripts/03_actualizacion.js`
-- **Descripción**: Modificación de datos existentes con operadores de actualización
-
-#### **Eliminación (DELETE)**
-- ✅ **Ejercicio 4.1**: Eliminar cliente con email "juan@email.com"
-- ✅ **Ejercicio 4.2**: Eliminar productos con stock menor a 5 unidades
-- **Archivo**: `scripts/04_eliminacion.js`
-- **Descripción**: Eliminación de documentos con validaciones y verificaciones
-
-### 🔍 **TEMA 2: EXPRESIONES REGULARES (REGEX)**
-
-#### **Búsquedas con Patrones**
-- ✅ **Ejercicio 5.1**: Productos cuyo nombre empiece por "Boro"
-- ✅ **Ejercicio 5.2**: Productos con nombre que contenga "con" como palabra completa
-- ✅ **Ejercicio 5.3**: Clientes con nombres que contengan la letra "z"
-- **Archivo**: `scripts/05_expresiones_regulares.js`
-- **Descripción**: Implementación de búsquedas avanzadas usando expresiones regulares
-
-### 📊 **TEMA 3: OPERADORES DE ARRAYS**
-
-#### **Consultas sobre Arrays**
-- ✅ **Ejercicio 6.1**: Clientes con preferencia "natural" en sus tags
-- ✅ **Ejercicio 6.2**: Productos con tags "natural" y "orgánico" usando `$all`
-- ✅ **Ejercicio 6.3**: Productos con más de un tag usando `$size`
-- **Archivo**: `scripts/06_operadores_arrays.js`
-- **Descripción**: Consultas complejas sobre campos de tipo array
-
-### 🚀 **TEMA 4: AGGREGATION FRAMEWORK**
-
-#### **Pipelines de Agregación**
-- ✅ **Ejercicio 7.1**: Productos más vendidos (suma total de unidades)
-- ✅ **Ejercicio 7.2**: Agrupación de clientes por cantidad de compras
-- ✅ **Ejercicio 7.3**: Total de ventas por mes usando `$group` y `$month`
-- ✅ **Ejercicio 7.4**: Promedio de precios por categoría
-- ✅ **Ejercicio 7.5**: Top 3 productos con mayor stock
-- **Archivo**: `scripts/07_aggregation_framework.js`
-- **Descripción**: Análisis de datos usando pipelines de agregación avanzados
-
-### ⚙️ **TEMA 5: FUNCIONES PERSONALIZADAS**
-
-#### **Funciones en system.js**
-- ✅ **Ejercicio 8.1**: Función `calcularDescuento(precio, porcentaje)`
-- ✅ **Ejercicio 8.2**: Función `clienteActivo(idCliente)` para clientes con >3 compras
-- ✅ **Ejercicio 8.3**: Función `verificarStock(productoId, cantidadDeseada)`
-- **Archivo**: `scripts/08_user_defined_functions.js`
-- **Descripción**: Creación de funciones personalizadas para operaciones comerciales
-
-### 🔄 **TEMA 6: TRANSACCIONES**
-
-#### **Operaciones Atómicas**
-- ✅ **Ejercicio 9.1**: Simular venta con descuento de stock y registro de venta
-- ✅ **Ejercicio 9.2**: Entrada de nuevo inventario con actualización de stock
-- ✅ **Ejercicio 9.3**: Operación de devolución con reversión de cambios
-- **Archivo**: `scripts/09_transacciones.js`
-- **Descripción**: Implementación de transacciones para operaciones comerciales complejas
-
-### 📈 **TEMA 7: INDEXACIÓN**
-
-#### **Optimización de Consultas**
-- ✅ **Ejercicio 10.1**: Índice en campo `nombre` de productos
-- ✅ **Ejercicio 10.2**: Índice compuesto en `categoria` y `precio`
-- ✅ **Ejercicio 10.3**: Índice en campo `email` de clientes
-- ✅ **Ejercicio 10.4**: Uso de `explain()` para verificar índices
-- **Archivo**: `scripts/10_indexacion.js`
-- **Descripción**: Creación y verificación de índices para optimizar consultas
+### 💡 Lo que aprendimos
+- MongoDB es más flexible que SQL para datos comerciales que cambian frecuentemente
+- Las expresiones regulares son muy útiles para búsquedas de texto en catálogos
+- La estructura de documentos es más intuitiva para aplicaciones comerciales
 
 ---
 
-## 💡 **EXPLICACIÓN DE CADA FUNCIONALIDAD DOCUMENTADA**
+## 👨‍💻 Autor
 
-### 🌿 **Sistema de Productos**
-- **Propósito**: Gestión completa del catálogo de productos derivados del borojó
-- **Características**: Categorización, precios, stock, tags descriptivos
-- **Beneficios**: Control de inventario, análisis de ventas, gestión de proveedores
-- **Casos de Uso**: Catálogo online, gestión de stock, análisis de productos más vendidos
+**La Tienda del Borojó - Sistema de Gestión con MongoDB**
 
-### 👥 **Gestión de Clientes**
-- **Propósito**: Base de datos de clientes con historial de compras y preferencias
-- **Características**: Perfiles personalizados, seguimiento de compras, segmentación
-- **Beneficios**: Marketing dirigido, recomendaciones personalizadas, fidelización
-- **Casos de Uso**: Programas de lealtad, campañas personalizadas, análisis de comportamiento
+Desarrollado como parte del taller de NO-SQL Documental con MongoDB para gestión comercial
 
-### 💰 **Control de Ventas**
-- **Propósito**: Registro detallado de todas las transacciones comerciales
-- **Características**: Fechas, productos, cantidades, totales, clientes
-- **Beneficios**: Análisis financiero, tendencias de ventas, control de inventario
-- **Casos de Uso**: Reportes de ventas, análisis de rentabilidad, control de flujo de caja
-
-### 🏪 **Gestión de Proveedores**
-- **Propósito**: Directorio de proveedores especializados por categoría
-- **Características**: Contactos, productos suministrados, especialización
-- **Beneficios**: Cadena de suministro, negociaciones, calidad de productos
-- **Casos de Uso**: Gestión de compras, evaluación de proveedores, control de calidad
-
-### 📦 **Control de Inventario**
-- **Propósito**: Seguimiento detallado del stock con lotes y fechas
-- **Características**: Trazabilidad, control de lotes, fechas de entrada
-- **Beneficios**: Gestión logística, control de calidad, optimización de stock
-- **Casos de Uso**: Control de stock mínimo, rotación de inventario, gestión de lotes
-
-### 🔍 **Búsquedas Avanzadas con Regex**
-- **Propósito**: Búsquedas inteligentes en catálogos y bases de datos
-- **Características**: Patrones flexibles, búsquedas parciales, filtros complejos
-- **Beneficios**: Experiencia de usuario mejorada, búsquedas eficientes
-- **Casos de Uso**: Búsqueda de productos, filtros avanzados, categorización automática
-
-### 📊 **Análisis con Aggregation Framework**
-- **Propósito**: Análisis profundo de datos comerciales y tendencias
-- **Características**: Pipelines personalizables, agrupaciones, cálculos estadísticos
-- **Beneficios**: Insights comerciales, toma de decisiones basada en datos
-- **Casos de Uso**: Reportes de ventas, análisis de tendencias, métricas de negocio
-
-### ⚙️ **Funciones Personalizadas**
-- **Propósito**: Automatización de operaciones comerciales frecuentes
-- **Características**: Cálculos automáticos, validaciones, operaciones complejas
-- **Beneficios**: Eficiencia operativa, reducción de errores, consistencia
-- **Casos de Uso**: Cálculo de descuentos, validación de stock, análisis de clientes
-
-### 🔄 **Transacciones**
-- **Propósito**: Garantizar integridad en operaciones comerciales complejas
-- **Características**: Operaciones atómicas, rollback automático, consistencia
-- **Beneficios**: Integridad de datos, confiabilidad del sistema
-- **Casos de Uso**: Procesamiento de ventas, gestión de inventario, operaciones de devolución
-
-### 📈 **Indexación**
-- **Propósito**: Optimización del rendimiento de consultas frecuentes
-- **Características**: Índices simples y compuestos, análisis de rendimiento
-- **Beneficios**: Consultas más rápidas, mejor experiencia de usuario
-- **Casos de Uso**: Búsquedas frecuentes, filtros por categoría, consultas de clientes
-
----
-
-## 📸 **CAPTURAS DE PANTALLA DE RESPUESTA A LAS CONSULTAS**
-
-### 🏗️ **1. CREACIÓN DE COLECCIONES**
-
-#### Creación de Colección Productos
-![Creación de Colección Productos](./assets/crearcoleccionproductos.png)
-
-#### Creación de Colección Clientes
-![Creación de Colección Clientes](./assets/image-2.png)
-
-#### Creación de Colección Ventas
-![Creación de Colección Ventas](./assets/crearcollecionesventas.png)
-
-#### Creación de Colección Proveedores
-![Creación de Colección Proveedores](./assets/crearcoleccionesproveedores.png)
-
-#### Creación de Colección Inventario
-![Creación de Colección Inventario](./assets/crearcoleccionesinvenatario.png)
-
-#### Verificación de Todas las Colecciones
-![Verificación de Colecciones](./assets/verificarcoleccionespng)
-
-### 📥 **2. INSERCIÓN DE DATOS**
-
-#### Inserción General de Documentos
-![Inserción de Documentos](./assets/insertardocumentos.png)
-
-#### Inserción del Producto "Chocolatina de borojó"
-![Inserción Chocolatina](./assets/insercion_chocolatina.png)
-
-#### Inserción del Cliente "Mario Mendoza"
-![Inserción Mario Mendoza](./assets/insercion_mariomendoza.png)
-
-### 📖 **3. OPERACIONES DE LECTURA**
-
-#### Consulta de Productos con Stock > 20
-![Consulta Productos Stock Alto](./assets/image-13.png)
-
-#### Consulta de Clientes sin Compras
-![Consulta Clientes sin Compras](./assets/image-15.png)
-
-#### Verificación de Consultas de Lectura
-![Verificación de Lecturas](./assets/verificaionconsultalectura.png)
-
-#### Consulta de Clientes
-![Consulta de Clientes](./assets/lectura_consultaclientes.png)
-
-#### Consulta de Productos
-![Consulta de Productos](./assets/lectura_consultaproductos.png)
-
-#### Verificación de Lectura
-![Verificación de Lectura](./assets/lectura_verificacion.png)
-
-### 🔄 **4. OPERACIONES DE ACTUALIZACIÓN**
-
-#### Aumentar Stock de "Borojó deshidratado" en 10 unidades
-![Aumento de Stock](./assets/image-17.png)
-
-#### Agregar Tag "bajo azúcar" a Productos de Categoría "Bebida"
-![Agregar Tag Bajo Azúcar](./assets/image-18.png)
-
-### 🗑️ **5. OPERACIONES DE ELIMINACIÓN**
-
-#### Eliminar Cliente con Email "juan@email.com"
-![Eliminación de Cliente](./assets/image-19.png)
-
-#### Verificación de Eliminación (0 resultados)
-![Verificación de Eliminación](./assets/image-20.png)
-
-#### Eliminar Productos con Stock < 5
-![Eliminación por Stock Bajo](./assets/image-21.png)
-
-#### Verificación de Productos con Stock < 5 (debe ser 0)
-![Verificación Stock Bajo](./assets/image-22.png)
-
-### 🔍 **6. CONSULTAS CON EXPRESIONES REGULARES (REGEX)**
-
-#### Productos cuyo nombre empiece por "Boro"
-![Regex Empieza con Boro](./assets/image-23.png)
-
-#### Productos cuyo nombre contenga "con" como palabra completa
-![Regex Contiene Con](./assets/image-24.png)
-
-#### Clientes cuyo nombre tenga la letra "z"
-![Regex Nombre con Z](./assets/image-5.png)
-
----
-
-## 🚀 **INSTRUCCIONES PARA EJECUTAR LOS SCRIPTS**
-
-### 📋 **Requisitos Previos**
-1. **MongoDB instalado** y ejecutándose en tu sistema
-2. **Base de datos creada** con nombre `tienda_borojo`
-3. **Colecciones creadas** para cada entidad del sistema
-4. **Datos importados** desde los archivos JSON proporcionados
-
-### 🔧 **Pasos de Configuración**
-
-#### **Paso 1: Conectar a MongoDB**
-```bash
-mongosh
-```
-
-#### **Paso 2: Crear y Usar Base de Datos**
-```bash
-use tienda_borojo
-```
-
-#### **Paso 3: Crear Colecciones**
-```javascript
-// Crear colección de productos
-db.createCollection("productos")
-
-// Crear colección de clientes
-db.createCollection("clientes")
-
-// Crear colección de ventas
-db.createCollection("ventas")
-
-// Crear colección de proveedores
-db.createCollection("proveedores")
-
-// Crear colección de inventario
-db.createCollection("inventario")
-```
-
-#### **Paso 4: Importar Datos**
-```bash
-# Importar productos
-mongoimport --db tienda_borojo --collection productos --file data/productos.json --jsonArray
-
-# Importar clientes
-mongoimport --db tienda_borojo --collection clientes --file data/clientes.json --jsonArray
-
-# Importar ventas
-mongoimport --db tienda_borojo --collection ventas --file data/ventas.json --jsonArray
-
-# Importar proveedores
-mongoimport --db tienda_borojo --collection proveedores --file data/proveedores.json --jsonArray
-
-# Importar inventario
-mongoimport --db tienda_borojo --collection inventario --file data/inventario.json --jsonArray
-```
-
-### 📝 **Ejecución de Scripts**
-
-#### **Script 1: Inserción**
-```bash
-# Ejecutar comandos de inserción
-# Copiar y pegar los comandos del archivo scripts/01_insercion.js
-```
-
-#### **Script 2: Lectura**
-```bash
-# Ejecutar comandos de lectura
-# Copiar y pegar los comandos del archivo scripts/02_lectura.js
-```
-
-#### **Script 3: Actualización**
-```bash
-# Ejecutar comandos de actualización
-# Copiar y pegar los comandos del archivo scripts/03_actualizacion.js
-```
-
-#### **Script 4: Eliminación**
-```bash
-# Ejecutar comandos de eliminación
-# Copiar y pegar los comandos del archivo scripts/04_eliminacion.js
-```
-
-#### **Script 5: Expresiones Regulares**
-```bash
-# Ejecutar consultas con regex
-# Copiar y pegar los comandos del archivo scripts/05_expresiones_regulares.js
-```
-
-### ⚠️ **Notas Importantes**
-
-1. **Ejecutar en orden**: Los scripts están numerados para ejecutarse secuencialmente
-2. **Verificar resultados**: Cada operación debe confirmarse antes de continuar
-3. **Backup de datos**: Hacer respaldo antes de operaciones de eliminación
-4. **Permisos**: Asegurar permisos de escritura en la base de datos
-
-### 🔍 **Verificación de Operaciones**
-
-#### **Verificar Inserción**
-```javascript
-// Verificar que se insertó el producto
-db.productos.find({"_id": 11})
-
-// Verificar que se insertó el cliente
-db.clientes.find({"_id": 11})
-```
-
-#### **Verificar Actualización**
-```javascript
-// Verificar stock actualizado
-db.productos.find({"nombre": "Borojó deshidratado"})
-
-// Verificar tags agregados
-db.productos.find({"categoria": "Bebida"})
-```
-
-#### **Verificar Eliminación**
-```javascript
-// Verificar cliente eliminado
-db.clientes.find({"email": "juan@email.com"})
-
-// Verificar productos con stock bajo
-db.productos.find({"stock": {$lt: 5}})
-```
-
----
-
-## 🎉 **CONCLUSIÓN**
-
-Este proyecto "La Tienda del Borojó" demuestra la implementación completa de un sistema de gestión comercial usando MongoDB. A través de las **5 colecciones principales**, **10 scripts de funcionalidades** y **expresiones regulares avanzadas**, hemos creado una base sólida para la gestión de inventario, clientes y ventas.
-
-### 🌟 **Logros Principales**
-- ✅ **Sistema CRUD completo** para todas las entidades comerciales
-- ✅ **Búsquedas inteligentes** con expresiones regulares
-- ✅ **Análisis de datos** usando Aggregation Framework
-- ✅ **Funciones personalizadas** para automatización
-- ✅ **Transacciones** para operaciones complejas
-- ✅ **Indexación** para optimización de rendimiento
-
-### 🚀 **Próximos Pasos**
-- Implementar interfaz de usuario web
-- Agregar autenticación y autorización
-- Integrar con sistemas de pago
-- Implementar reportes avanzados
-- Agregar funcionalidades de notificaciones
-
-### 💡 **Aprendizajes Clave**
-- MongoDB es ideal para sistemas comerciales flexibles
-- Las expresiones regulares optimizan búsquedas de texto
-- La estructura de documentos simplifica consultas complejas
-- Las transacciones garantizan integridad de datos
-- La indexación mejora significativamente el rendimiento
-
----
-
-*Este proyecto cumple con todos los requerimientos del taller y proporciona una base sólida para sistemas de gestión comercial con MongoDB.*
-
----
 ### Información de Contacto
 - **GitHub**: [@DanielSantiagoV](https://github.com/DanielSantiagoV)
 - **GitHub**: [@Sebastian Ardila](https://github.com/Jharmo05)
-- **GitHub**: [@Connie Carrillo](https://github.com/connisita77) 
+---
+
+*Este proyecto cumple con todos los requerimientos especificados en el taller y proporciona una base sólida para la gestión comercial con MongoDB y expresiones regulares.*
 
 ---
 
