@@ -617,94 +617,6 @@ Estas consultas con regex son fundamentales para:
 
 ---
 
-## 📸 Capturas de Pantalla - Ejercicios Desarrollados
-
-### 🏗️ **1. CREACIÓN DE COLECCIONES**
-
-#### Creación de Colección Productos
-![Creación de Colección Productos](./assets/crearcoleccionproductos.png)
-
-#### Creación de Colección Clientes
-![Creación de Colección Clientes](./assets/image-2.png)
-
-#### Creación de Colección Ventas
-![Creación de Colección Ventas](./assets/crearcollecionesventas.png)
-
-#### Creación de Colección Proveedores
-![Creación de Colección Proveedores](./assets/crearcoleccionesproveedores.png)
-
-#### Creación de Colección Inventario
-![Creación de Colección Inventario](./assets/crearcoleccionesinvenatario.png)
-
-#### Verificación de Todas las Colecciones
-![Verificación de Colecciones](./assets/verificarcoleccionespng)
-
-### 📥 **2. INSERCIÓN DE DATOS**
-
-#### Inserción General de Documentos
-![Inserción de Documentos](./assets/insertardocumentos.png)
-
-#### Inserción del Producto "Chocolatina de borojó"
-![Inserción Chocolatina](./assets/insercion_chocolatina.png)
-
-#### Inserción del Cliente "Mario Mendoza"
-![Inserción Mario Mendoza](./assets/insercion_mariomendoza.png)
-
-### 📖 **3. OPERACIONES DE LECTURA**
-
-#### Consulta de Productos con Stock > 20
-![Consulta Productos Stock Alto](./assets/image-13.png)
-
-#### Consulta de Clientes sin Compras
-![Consulta Clientes sin Compras](./assets/image-15.png)
-
-#### Verificación de Consultas de Lectura
-![Verificación de Lecturas](./assets/verificaionconsultalectura.png)
-
-#### Consulta de Clientes
-![Consulta de Clientes](./assets/lectura_consultaclientes.png)
-
-#### Consulta de Productos
-![Consulta de Productos](./assets/lectura_consultaproductos.png)
-
-#### Verificación de Lectura
-![Verificación de Lectura](./assets/lectura_verificacion.png)
-
-### 🔄 **4. OPERACIONES DE ACTUALIZACIÓN**
-
-#### Aumentar Stock de "Borojó deshidratado" en 10 unidades
-![Aumento de Stock](./assets/image-17.png)
-
-#### Agregar Tag "bajo azúcar" a Productos de Categoría "Bebida"
-![Agregar Tag Bajo Azúcar](./assets/image-18.png)
-
-### 🗑️ **5. OPERACIONES DE ELIMINACIÓN**
-
-#### Eliminar Cliente con Email "juan@email.com"
-![Eliminación de Cliente](./assets/image-19.png)
-
-#### Verificación de Eliminación (0 resultados)
-![Verificación de Eliminación](./assets/image-20.png)
-
-#### Eliminar Productos con Stock < 5
-![Eliminación por Stock Bajo](./assets/image-21.png)
-
-#### Verificación de Productos con Stock < 5 (debe ser 0)
-![Verificación Stock Bajo](./assets/image-22.png)
-
-### 🔍 **6. CONSULTAS CON EXPRESIONES REGULARES (REGEX)**
-
-#### Productos cuyo nombre empiece por "Boro"
-![Regex Empieza con Boro](./assets/image-23.png)
-
-#### Productos cuyo nombre contenga "con" como palabra completa
-![Regex Contiene Con](./assets/image-24.png)
-
-#### Clientes cuyo nombre tenga la letra "z"
-![Regex Nombre con Z](./assets/image-5.png)
-
----
-
 ## 📚 **LISTADO DE EJERCICIOS DESARROLLADOS**
 
 ### 🎯 **TEMA 1: OPERACIONES CRUD BÁSICAS**
@@ -792,57 +704,155 @@ Estas consultas con regex son fundamentales para:
 
 ---
 
-## 🎯 **EXPLICACIÓN DE CADA FUNCIONALIDAD DOCUMENTADA**
+## 💡 **EXPLICACIÓN DE CADA FUNCIONALIDAD DOCUMENTADA**
 
 ### 🌿 **Sistema de Productos**
 - **Propósito**: Gestión completa del catálogo de productos derivados del borojó
 - **Características**: Categorización, precios, stock, tags descriptivos
 - **Beneficios**: Control de inventario, análisis de ventas, gestión de proveedores
+- **Casos de Uso**: Catálogo online, gestión de stock, análisis de productos más vendidos
 
 ### 👥 **Gestión de Clientes**
 - **Propósito**: Base de datos de clientes con historial de compras y preferencias
 - **Características**: Perfiles personalizados, seguimiento de compras, segmentación
 - **Beneficios**: Marketing dirigido, recomendaciones personalizadas, fidelización
+- **Casos de Uso**: Programas de lealtad, campañas personalizadas, análisis de comportamiento
 
 ### 💰 **Control de Ventas**
 - **Propósito**: Registro detallado de todas las transacciones comerciales
 - **Características**: Fechas, productos, cantidades, totales, clientes
 - **Beneficios**: Análisis financiero, tendencias de ventas, control de inventario
+- **Casos de Uso**: Reportes de ventas, análisis de rentabilidad, control de flujo de caja
 
 ### 🏪 **Gestión de Proveedores**
 - **Propósito**: Directorio de proveedores especializados por categoría
 - **Características**: Contactos, productos suministrados, especialización
 - **Beneficios**: Cadena de suministro, negociaciones, calidad de productos
+- **Casos de Uso**: Gestión de compras, evaluación de proveedores, control de calidad
 
 ### 📦 **Control de Inventario**
 - **Propósito**: Seguimiento detallado del stock con lotes y fechas
 - **Características**: Trazabilidad, control de lotes, fechas de entrada
 - **Beneficios**: Gestión logística, control de calidad, optimización de stock
+- **Casos de Uso**: Control de stock mínimo, rotación de inventario, gestión de lotes
 
 ### 🔍 **Búsquedas Avanzadas con Regex**
 - **Propósito**: Búsquedas inteligentes en catálogos y bases de datos
 - **Características**: Patrones flexibles, búsquedas parciales, filtros complejos
 - **Beneficios**: Experiencia de usuario mejorada, búsquedas eficientes
+- **Casos de Uso**: Búsqueda de productos, filtros avanzados, categorización automática
 
 ### 📊 **Análisis con Aggregation Framework**
 - **Propósito**: Análisis profundo de datos comerciales y tendencias
 - **Características**: Pipelines personalizables, agrupaciones, cálculos estadísticos
 - **Beneficios**: Insights comerciales, toma de decisiones basada en datos
+- **Casos de Uso**: Reportes de ventas, análisis de tendencias, métricas de negocio
 
 ### ⚙️ **Funciones Personalizadas**
 - **Propósito**: Automatización de operaciones comerciales frecuentes
 - **Características**: Cálculos automáticos, validaciones, operaciones complejas
 - **Beneficios**: Eficiencia operativa, reducción de errores, consistencia
+- **Casos de Uso**: Cálculo de descuentos, validación de stock, análisis de clientes
 
 ### 🔄 **Transacciones**
 - **Propósito**: Garantizar integridad en operaciones comerciales complejas
 - **Características**: Operaciones atómicas, rollback automático, consistencia
 - **Beneficios**: Integridad de datos, confiabilidad del sistema
+- **Casos de Uso**: Procesamiento de ventas, gestión de inventario, operaciones de devolución
 
 ### 📈 **Indexación**
 - **Propósito**: Optimización del rendimiento de consultas frecuentes
 - **Características**: Índices simples y compuestos, análisis de rendimiento
 - **Beneficios**: Consultas más rápidas, mejor experiencia de usuario
+- **Casos de Uso**: Búsquedas frecuentes, filtros por categoría, consultas de clientes
+
+---
+
+## 📸 **CAPTURAS DE PANTALLA DE RESPUESTA A LAS CONSULTAS**
+
+### 🏗️ **1. CREACIÓN DE COLECCIONES**
+
+#### Creación de Colección Productos
+![Creación de Colección Productos](./assets/crearcoleccionproductos.png)
+
+#### Creación de Colección Clientes
+![Creación de Colección Clientes](./assets/image-2.png)
+
+#### Creación de Colección Ventas
+![Creación de Colección Ventas](./assets/crearcollecionesventas.png)
+
+#### Creación de Colección Proveedores
+![Creación de Colección Proveedores](./assets/crearcoleccionesproveedores.png)
+
+#### Creación de Colección Inventario
+![Creación de Colección Inventario](./assets/crearcoleccionesinvenatario.png)
+
+#### Verificación de Todas las Colecciones
+![Verificación de Colecciones](./assets/verificarcoleccionespng)
+
+### 📥 **2. INSERCIÓN DE DATOS**
+
+#### Inserción General de Documentos
+![Inserción de Documentos](./assets/insertardocumentos.png)
+
+#### Inserción del Producto "Chocolatina de borojó"
+![Inserción Chocolatina](./assets/insercion_chocolatina.png)
+
+#### Inserción del Cliente "Mario Mendoza"
+![Inserción Mario Mendoza](./assets/insercion_mariomendoza.png)
+
+### 📖 **3. OPERACIONES DE LECTURA**
+
+#### Consulta de Productos con Stock > 20
+![Consulta Productos Stock Alto](./assets/image-13.png)
+
+#### Consulta de Clientes sin Compras
+![Consulta Clientes sin Compras](./assets/image-15.png)
+
+#### Verificación de Consultas de Lectura
+![Verificación de Lecturas](./assets/verificaionconsultalectura.png)
+
+#### Consulta de Clientes
+![Consulta de Clientes](./assets/lectura_consultaclientes.png)
+
+#### Consulta de Productos
+![Consulta de Productos](./assets/lectura_consultaproductos.png)
+
+#### Verificación de Lectura
+![Verificación de Lectura](./assets/lectura_verificacion.png)
+
+### 🔄 **4. OPERACIONES DE ACTUALIZACIÓN**
+
+#### Aumentar Stock de "Borojó deshidratado" en 10 unidades
+![Aumento de Stock](./assets/image-17.png)
+
+#### Agregar Tag "bajo azúcar" a Productos de Categoría "Bebida"
+![Agregar Tag Bajo Azúcar](./assets/image-18.png)
+
+### 🗑️ **5. OPERACIONES DE ELIMINACIÓN**
+
+#### Eliminar Cliente con Email "juan@email.com"
+![Eliminación de Cliente](./assets/image-19.png)
+
+#### Verificación de Eliminación (0 resultados)
+![Verificación de Eliminación](./assets/image-20.png)
+
+#### Eliminar Productos con Stock < 5
+![Eliminación por Stock Bajo](./assets/image-21.png)
+
+#### Verificación de Productos con Stock < 5 (debe ser 0)
+![Verificación Stock Bajo](./assets/image-22.png)
+
+### 🔍 **6. CONSULTAS CON EXPRESIONES REGULARES (REGEX)**
+
+#### Productos cuyo nombre empiece por "Boro"
+![Regex Empieza con Boro](./assets/image-23.png)
+
+#### Productos cuyo nombre contenga "con" como palabra completa
+![Regex Contiene Con](./assets/image-24.png)
+
+#### Clientes cuyo nombre tenga la letra "z"
+![Regex Nombre con Z](./assets/image-5.png)
 
 ---
 
