@@ -1,31 +1,41 @@
 // =====================================================
-// EJERCICIOS DE ACTUALIZACIÓN - LA TIENDA DEL BOROJÓ
+// GESTIÓN DE INVENTARIO Y PRECIOS - LA TIENDA DEL BOROJÓ
 // =====================================================
 //
-// DESCRIPCIÓN: Este script contiene los ejercicios de actualización
-// y modificación de datos en la base de datos de la tienda.
+// 📦 ESCENARIO REAL: Como administrador de la tienda, necesitas
+// mantener tu inventario actualizado y ajustar precios según
+// la demanda del mercado. Un proveedor acaba de traer más stock
+// y quieres ofrecer opciones saludables a tus clientes.
 //
-// OBJETIVO: Aprender a modificar documentos existentes en MongoDB
-// usando diferentes operadores de actualización.
+// 🎯 OBJETIVO DE NEGOCIO: Optimizar el inventario, ajustar
+// precios estratégicamente y mejorar la categorización de
+// productos para aumentar las ventas.
 //
-// IMPORTANTE: Ejecuta estos comandos uno por uno en mongosh para
-// ver el resultado de cada operación de actualización.
+// 💡 IMPORTANTE: Ejecuta estos comandos uno por uno en mongosh para
+// simular operaciones reales de gestión de tu tienda.
 // =====================================================
 
 // =====================================================
-// EJERCICIO 1: AUMENTAR STOCK DE PRODUCTO
+// SITUACIÓN 1: NUEVO STOCK LLEGA A LA TIENDA
 // =====================================================
 //
-// DESCRIPCIÓN: Incrementar el stock del "Borojó deshidratado" en 10 unidades
+// 🚚 ESCENARIO: El proveedor "Frutas del Chocó" acaba de traer
+// un nuevo lote de "Borojó deshidratado". Necesitas actualizar
+// el inventario para reflejar las 10 unidades adicionales.
 //
-// PASO A PASO:
-// 1. Usamos updateOne() para actualizar un solo documento
-// 2. Primer parámetro: filtro para encontrar el documento específico
-// 3. Segundo parámetro: operación a realizar
-// 4. $inc significa "increment" (incrementar)
+// 💰 IMPACTO EN EL NEGOCIO:
+// - Stock aumentado = más ventas posibles
+// - Producto disponible para promociones
+// - Mejor servicio al cliente
+// - Inventario actualizado y preciso
 //
-// RESULTADO ESPERADO: Deberías ver un mensaje confirmando la actualización
-// con el número de documentos modificados (debería ser 1)
+// 🔧 QUÉ HACEMOS: Incrementar el stock del "Borojó deshidratado" en 10 unidades
+// - updateOne() actualiza un solo producto específico
+// - $inc significa "increment" (incrementar)
+// - Filtramos por nombre exacto del producto
+//
+// ✅ RESULTADO ESPERADO: Confirmación de que el stock se actualizó
+// de 18 a 28 unidades. Ahora tienes más producto para vender.
 
 db.productos.updateOne(
   { "nombre": "Borojó deshidratado" },
@@ -33,19 +43,26 @@ db.productos.updateOne(
 )
 
 // =====================================================
-// EJERCICIO 2: AÑADIR TAG A MÚLTIPLES PRODUCTOS
+// SITUACIÓN 2: CAMPAÑA DE PRODUCTOS SALUDABLES
 // =====================================================
 //
-// DESCRIPCIÓN: Agregar el tag "bajo azúcar" a todos los productos de bebida
+// 🥤 ESCENARIO: Has decidido lanzar una campaña de "Bebidas Saludables"
+// para atraer a clientes conscientes de su salud. Necesitas etiquetar
+// todos tus productos de bebida como "bajo azúcar" para destacarlos.
 //
-// PASO A PASO:
-// 1. Usamos updateMany() para actualizar múltiples documentos
-// 2. Primer parámetro: filtro para encontrar todos los productos de categoría "Bebida"
-// 3. Segundo parámetro: operación a realizar
-// 4. $push añade un elemento al array "tags"
+// 🎯 ESTRATEGIA DE MARKETING:
+// - Etiqueta "bajo azúcar" = diferenciación en el mercado
+// - Atrae a clientes saludables
+// - Permite crear sección especial en la tienda
+// - Mejora el posicionamiento de marca
 //
-// RESULTADO ESPERADO: Deberías ver un mensaje confirmando la actualización
-// con el número de documentos modificados (debería ser 3)
+// 🔧 QUÉ HACEMOS: Agregar el tag "bajo azúcar" a todos los productos de categoría "Bebida"
+// - updateMany() actualiza múltiples productos a la vez
+// - Filtramos por categoría "Bebida" para afectar solo bebidas
+// - $push añade el nuevo tag al array existente
+//
+// ✅ RESULTADO ESPERADO: Confirmación de que 3 productos de bebida
+// ahora tienen el tag "bajo azúcar". Puedes crear tu sección saludable.
 
 db.productos.updateMany(
   { "categoria": "Bebida" },
@@ -53,15 +70,17 @@ db.productos.updateMany(
 )
 
 // =====================================================
-// VERIFICACIÓN DE ACTUALIZACIONES
+// VERIFICACIÓN DE CAMBIOS - CONTROL DE CALIDAD
 // =====================================================
 //
-// IMPORTANTE: Siempre verifica que las actualizaciones se realizaron
-// correctamente antes de continuar con otros ejercicios.
+// 🔍 IMPORTANTE: En una tienda real, siempre debes verificar que
+// los cambios se aplicaron correctamente. Esto evita errores
+// en el inventario y problemas con los clientes.
 //
-// PASO 1: Verificar stock actualizado del Borojó deshidratado
-// - Buscamos el producto por nombre
+// 📋 PASO 1: Verificar que el stock del Borojó deshidratado se actualizó
+// - Buscamos el producto por nombre exacto
 // - Deberías ver que el stock aumentó de 18 a 28 unidades
+// - Esto confirma que el nuevo lote se agregó correctamente
 
 db.productos.find({ "nombre": "Borojó deshidratado" })
 
@@ -72,27 +91,36 @@ db.productos.find({ "nombre": "Borojó deshidratado" })
 db.productos.find({ "categoria": "Bebida" })
 
 // =====================================================
-// ACTUALIZACIONES ADICIONALES ÚTILES PARA LA TIENDA
+// OPERACIONES ESTRATÉGICAS ADICIONALES
 // =====================================================
 //
-// Estas operaciones te ayudarán a gestionar precios, promociones
-// y categorización de productos de manera eficiente.
+// 🚀 Estas operaciones avanzadas te ayudarán a gestionar precios,
+// promociones y categorización de productos de manera estratégica
+// para maximizar las ventas y la satisfacción del cliente.
 
 // =====================================================
-// ACTUALIZACIÓN 3: APLICAR DESCUENTO A SNACKS
+// SITUACIÓN 3: PROMOCIÓN DE FIN DE SEMANA
 // =====================================================
 //
-// DESCRIPCIÓN: Reducir el precio de todos los productos de categoría "Snack" en un 10%
+// 🎉 ESCENARIO: Es fin de semana y quieres atraer más clientes
+// a la tienda. Decides hacer una promoción especial en snacks
+// con un descuento del 10% para aumentar las ventas.
 //
-// PASO A PASO:
-// 1. Usamos updateMany() para afectar múltiples productos
-// 2. Filtramos por categoría "Snack"
-// 3. $mul multiplica el precio actual por 0.9 (90% del precio original)
-// 4. Esto simula un descuento del 10%
+// 💰 ESTRATEGIA DE PRECIOS:
+// - Descuento del 10% = mayor volumen de ventas
+// - Snacks son productos de alta rotación
+// - Atrae a familias y jóvenes
+// - Mejora la competitividad en el mercado
 //
-// RESULTADO ESPERADO: Los precios de snacks se reducirán:
-// - Galletas con borojó: de 6000 a 5400
-// - Chocolatina de borojó: de 4000 a 3600
+// 🔧 QUÉ HACEMOS: Reducir el precio de todos los snacks en un 10%
+// - updateMany() afecta múltiples productos a la vez
+// - Filtramos por categoría "Snack" para la promoción
+// - $mul multiplica el precio por 0.9 (90% del original)
+//
+// 📊 RESULTADO ESPERADO: Los precios de snacks se reducirán:
+// - Galletas con borojó: de $6,000 a $5,400
+// - Chocolatina de borojó: de $4,000 a $3,600
+// - Mayor competitividad y ventas esperadas
 
 db.productos.updateMany(
   { "categoria": "Snack" },
@@ -100,18 +128,29 @@ db.productos.updateMany(
 )
 
 // =====================================================
-// ACTUALIZACIÓN 4: ETIQUETAR PRODUCTOS POPULARES
+// SITUACIÓN 4: IDENTIFICAR PRODUCTOS ESTRELLA
 // =====================================================
 //
-// DESCRIPCIÓN: Añadir el tag "popular" a productos con stock alto
+// ⭐ ESCENARIO: Quieres identificar y destacar tus productos
+// más populares para crear una sección "Productos Estrella"
+// en la tienda. Esto ayuda a los clientes a tomar decisiones
+// de compra más rápidas.
 //
-// PASO A PASO:
-// 1. Filtramos productos con stock mayor a 25 unidades
-// 2. Usamos $push para añadir "popular" al array de tags
-// 3. Esto ayuda a identificar productos de alta demanda
+// 🎯 ESTRATEGIA DE MERCHANDISING:
+// - Productos con stock alto = alta demanda
+// - Etiqueta "popular" = confianza del cliente
+// - Sección especial en la tienda
+// - Mejor posicionamiento de productos
 //
-// RESULTADO ESPERADO: Productos como "Jugo de borojó" (stock: 50)
-// y "Galletas con borojó" (stock: 40) tendrán el tag "popular"
+// 🔧 QUÉ HACEMOS: Añadir el tag "popular" a productos con stock alto
+// - Filtramos productos con stock mayor a 25 unidades
+// - $push añade "popular" al array de tags existente
+// - Esto crea una categoría especial de productos
+//
+// 📊 RESULTADO ESPERADO: Productos como:
+// - "Jugo de borojó" (stock: 50) - Muy popular
+// - "Galletas con borojó" (stock: 40) - Alta demanda
+// - Ahora puedes crear tu sección "Productos Estrella"
 
 db.productos.updateMany(
   { "stock": { $gt: 25 } },
@@ -119,14 +158,21 @@ db.productos.updateMany(
 )
 
 // =====================================================
-// RESUMEN DE LO APRENDIDO
+// RESUMEN DE OPERACIONES REALIZADAS
 // =====================================================
 //
-// ✅ updateOne(): Para actualizar un solo documento
-// ✅ updateMany(): Para actualizar múltiples documentos
-// ✅ $inc: Para incrementar valores numéricos
-// ✅ $push: Para añadir elementos a arrays
-// ✅ $mul: Para multiplicar valores numéricos
-// ✅ Filtros: Para seleccionar documentos específicos
-// ✅ Verificación: Siempre verificar después de actualizar
+// 🎯 LO QUE ACABAS DE HACER:
+// ✅ Actualizaste el stock del Borojó deshidratado (+10 unidades)
+// ✅ Lanzaste campaña de "Bebidas Saludables" (tag "bajo azúcar")
+// ✅ Aplicaste promoción de fin de semana en snacks (-10%)
+// ✅ Identificaste tus productos estrella (tag "popular")
 //
+// 💼 IMPACTO EN TU NEGOCIO:
+// - Inventario actualizado y preciso
+// - Nueva estrategia de marketing implementada
+// - Promociones activas para aumentar ventas
+// - Productos destacados para mejor merchandising
+//
+// 🚀 PRÓXIMO PASO: Ahora puedes continuar con otras operaciones
+// como análisis de ventas, gestión de clientes, o implementar
+// nuevas estrategias de precios y promociones.

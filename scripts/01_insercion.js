@@ -1,29 +1,41 @@
 // =====================================================
-// EJERCICIOS DE INSERCIÓN - LA TIENDA DEL BOROJÓ
+// GESTIÓN DE INVENTARIO Y CLIENTES - LA TIENDA DEL BOROJÓ
 // =====================================================
 // 
-// DESCRIPCIÓN: Este script contiene los ejercicios de inserción de nuevos
-// productos y clientes en la base de datos de la tienda.
+// 🌿 ESCENARIO REAL: Estás administrando una tienda de productos
+// derivados del borojó en el Pacífico colombiano. Necesitas agregar
+// nuevos productos al catálogo y registrar nuevos clientes que
+// llegan a la tienda.
 //
-// OBJETIVO: Aprender a insertar documentos individuales en MongoDB
-// usando el comando insertOne().
+// 🎯 OBJETIVO DE NEGOCIO: Mantener el inventario actualizado y
+// expandir la base de clientes para aumentar las ventas.
 //
-// IMPORTANTE: Ejecuta estos comandos uno por uno en mongosh para
-// ver el resultado de cada operación.
+// 💡 IMPORTANTE: Ejecuta estos comandos uno por uno en mongosh para
+// simular operaciones reales de tu tienda.
 // =====================================================
 
 // =====================================================
-// EJERCICIO 1: INSERTAR NUEVO PRODUCTO
+// SITUACIÓN 1: NUEVO PRODUCTO LLEGA A LA TIENDA
 // =====================================================
 // 
-// PASO A PASO:
-// 1. Usamos insertOne() para insertar un solo documento
-// 2. Definimos un _id único (11) para evitar conflictos
-// 3. Estructuramos el documento con todos los campos necesarios
-// 4. Los tags se definen como un array []
+// 📦 ESCENARIO: Un proveedor local acaba de traer "Chocolatinas de borojó"
+// que son perfectas para el mercado escolar. Necesitas agregarlas al
+// inventario para que los clientes puedan comprarlas.
 //
-// RESULTADO ESPERADO: Deberías ver un mensaje confirmando la inserción
-// con el ObjectId generado automáticamente.
+// 💰 ANÁLISIS DE NEGOCIO:
+// - Precio competitivo: $4,000 (ideal para estudiantes)
+// - Stock inicial: 35 unidades (para probar la demanda)
+// - Categoría: Snack (sección de mayor rotación)
+// - Tags: "dulce" y "energía" (atractivo para jóvenes)
+//
+// 🔧 PASO A PASO:
+// 1. Usamos insertOne() para agregar el producto al catálogo
+// 2. Asignamos _id: 11 para mantener orden en el inventario
+// 3. Estructuramos todos los campos necesarios para la venta
+// 4. Los tags ayudan a los clientes a encontrar el producto
+//
+// ✅ RESULTADO ESPERADO: Confirmación de que el producto se agregó
+// al catálogo. Ahora los clientes pueden comprarlo.
 
 db.productos.insertOne({
   "_id": 11,
@@ -35,17 +47,27 @@ db.productos.insertOne({
 })
 
 // =====================================================
-// EJERCICIO 2: INSERTAR NUEVO CLIENTE
+// SITUACIÓN 2: NUEVO CLIENTE REGISTRADO EN LA TIENDA
 // =====================================================
 //
-// PASO A PASO:
-// 1. Creamos un nuevo cliente con _id único (11)
-// 2. El array de compras está vacío [] porque es un cliente nuevo
-// 3. Las preferencias se definen como array con sus gustos
-// 4. Usamos insertOne() para insertar un solo cliente
+// 👤 ESCENARIO: Mario Mendoza acaba de entrar a la tienda por primera vez.
+// Es un deportista local que busca productos energéticos y naturales.
+// Necesitas registrarlo en el sistema para hacer seguimiento de sus compras.
 //
-// RESULTADO ESPERADO: Confirmación de inserción del cliente
-// con su ObjectId correspondiente.
+// 🎯 PERFIL DEL CLIENTE:
+// - Deportista activo (busca productos energéticos)
+// - Consumidor consciente (prefiere productos naturales)
+// - Cliente potencial de alto valor (compras frecuentes)
+// - Sin historial previo (nuevo en la tienda)
+//
+// 🔧 PASO A PASO:
+// 1. Creamos el perfil del cliente con _id único (11)
+// 2. Array de compras vacío [] porque es su primera visita
+// 3. Preferencias basadas en su estilo de vida
+// 4. Usamos insertOne() para agregarlo a la base de clientes
+//
+// ✅ RESULTADO ESPERADO: Mario Mendoza queda registrado en el sistema.
+// Ahora puedes hacer seguimiento de sus compras y preferencias.
 
 db.clientes.insertOne({
   "_id": 11,
@@ -56,15 +78,17 @@ db.clientes.insertOne({
 })
 
 // =====================================================
-// VERIFICACIÓN DE INSERCIONES
+// VERIFICACIÓN DE OPERACIONES - CONTROL DE CALIDAD
 // =====================================================
 //
-// IMPORTANTE: Siempre verifica que las inserciones se realizaron
-// correctamente antes de continuar con otros ejercicios.
+// 🔍 IMPORTANTE: En una tienda real, siempre debes verificar que
+// las operaciones se realizaron correctamente. Esto evita errores
+// en el inventario y problemas con los clientes.
 //
-// PASO 1: Verificar que el producto se insertó
-// - Buscamos por _id: 11 para encontrar el producto específico
-// - Deberías ver el documento completo del producto
+// 📋 PASO 1: Verificar que el producto se agregó al catálogo
+// - Buscamos por _id: 11 para encontrar "Chocolatinas de borojó"
+// - Deberías ver todos los detalles del producto en pantalla
+// - Esto confirma que está disponible para la venta
 
 db.productos.find({"_id": 11})
 
@@ -91,12 +115,21 @@ db.productos.countDocuments()
 db.clientes.countDocuments()
 
 // =====================================================
-// RESUMEN DE LO APRENDIDO
+// RESUMEN DE OPERACIONES REALIZADAS
 // =====================================================
 //
-// ✅ insertOne(): Para insertar un solo documento
-// ✅ _id personalizado: Para controlar identificadores únicos
-// ✅ Arrays: Para campos como tags y preferencias
-// ✅ Verificación: Siempre verificar después de insertar
-// ✅ Conteo: Usar countDocuments() para confirmar totales
+// 🎯 LO QUE ACABAS DE HACER:
+// ✅ Agregaste "Chocolatinas de borojó" al catálogo de productos
+// ✅ Registraste a Mario Mendoza como nuevo cliente
+// ✅ Verificaste que ambas operaciones fueron exitosas
+// ✅ Confirmaste el total actualizado de productos y clientes
 //
+// 💼 IMPACTO EN TU NEGOCIO:
+// - Nuevo producto disponible para venta
+// - Cliente potencial registrado en el sistema
+// - Inventario actualizado y organizado
+// - Base de datos sincronizada
+//
+// 🚀 PRÓXIMO PASO: Ahora puedes continuar con otras operaciones
+// como consultas de inventario, actualizaciones de stock, o
+// análisis de ventas para tomar decisiones de negocio.

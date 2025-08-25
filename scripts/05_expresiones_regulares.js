@@ -1,15 +1,19 @@
 // =====================================================
-// EJERCICIOS DE EXPRESIONES REGULARES - LA TIENDA DEL BOROJÓ
+// BÚSQUEDAS AVANZADAS Y ANÁLISIS DE TEXTO - LA TIENDA DEL BOROJÓ
 // =====================================================
 //
-// DESCRIPCIÓN: Este script contiene los ejercicios de búsqueda
-// usando expresiones regulares (regex) en MongoDB.
+// 🔍 ESCENARIO REAL: Como administrador de la tienda, necesitas
+// realizar búsquedas sofisticadas en tu base de datos para
+// encontrar patrones específicos, analizar nombres de productos,
+// y entender mejor el comportamiento de tus clientes.
 //
-// OBJETIVO: Aprender a realizar búsquedas avanzadas y flexibles
-// usando patrones de texto y caracteres especiales.
+// 🎯 OBJETIVO DE NEGOCIO: Obtener insights valiosos mediante
+// búsquedas avanzadas que te permitan segmentar productos,
+// identificar tendencias y mejorar la experiencia del cliente.
 //
-// IMPORTANTE: Las expresiones regulares son muy poderosas pero
-// pueden ser complejas. Ejecuta estos comandos uno por uno.
+// 💡 IMPORTANTE: Las expresiones regulares son muy poderosas pero
+// pueden ser complejas. Ejecuta estos comandos uno por uno para
+// entender cada patrón de búsqueda.
 // =====================================================
 
 // =====================================================

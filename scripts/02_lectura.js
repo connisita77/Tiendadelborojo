@@ -1,49 +1,68 @@
 // =====================================================
-// EJERCICIOS DE LECTURA - LA TIENDA DEL BOROJÓ
+// ANÁLISIS DE INVENTARIO Y CLIENTES - LA TIENDA DEL BOROJÓ
 // =====================================================
 //
-// DESCRIPCIÓN: Este script contiene los ejercicios de lectura y consulta
-// de datos en la base de datos de la tienda.
+// 📊 ESCENARIO REAL: Como administrador de la tienda, necesitas
+// analizar tu inventario y base de clientes para tomar decisiones
+// de negocio inteligentes. ¿Qué productos se están agotando?
+// ¿Qué clientes necesitan atención especial?
 //
-// OBJETIVO: Aprender a consultar documentos en MongoDB usando
-// diferentes operadores de comparación y consulta.
+// 🎯 OBJETIVO DE NEGOCIO: Obtener insights valiosos sobre tu
+// inventario, clientes y tendencias de ventas para optimizar
+// la gestión de la tienda.
 //
-// IMPORTANTE: Ejecuta estos comandos uno por uno en mongosh para
-// ver el resultado de cada consulta.
+// 💡 IMPORTANTE: Ejecuta estos comandos uno por uno en mongosh para
+// obtener información real de tu negocio.
 // =====================================================
 
 // =====================================================
-// EJERCICIO 1: PRODUCTOS CON STOCK ALTO
+// ANÁLISIS 1: PRODUCTOS CON STOCK SUFICIENTE
 // =====================================================
 //
-// DESCRIPCIÓN: Buscar productos que tengan más de 20 unidades en stock
+// 📦 SITUACIÓN DE NEGOCIO: Necesitas identificar qué productos
+// tienen stock suficiente para satisfacer la demanda de la semana.
+// Los productos con más de 20 unidades están en buen estado.
 //
-// PASO A PASO:
-// 1. Usamos find() para buscar documentos
-// 2. $gt significa "greater than" (mayor que)
-// 3. Buscamos en el campo "stock" valores mayores a 20
+// 💰 IMPACTO EN VENTAS:
+// - Productos con stock alto = ventas garantizadas
+// - No hay riesgo de quedarte sin producto
+// - Puedes hacer promociones con confianza
 //
-// RESULTADO ESPERADO: Deberías ver productos como:
-// - Borojó fresco (stock: 30)
-// - Jugo de borojó (stock: 50)
-// - Galletas con borojó (stock: 40)
-// - Compota de borojó (stock: 20)
+// 🔍 QUÉ BUSCAMOS: Productos con stock mayor a 20 unidades
+// - $gt significa "greater than" (mayor que)
+// - Esto te da una lista de productos seguros para vender
+//
+// 📊 RESULTADO ESPERADO: Deberías ver productos como:
+// - Borojó fresco (stock: 30) - Producto estrella
+// - Jugo de borojó (stock: 50) - Muy popular
+// - Galletas con borojó (stock: 40) - Snack de alta demanda
+// - Compota de borojó (stock: 20) - Límite mínimo aceptable
 
 db.productos.find({ "stock": { $gt: 20 } })
 
 // =====================================================
-// EJERCICIO 2: CLIENTES SIN COMPRAS
+// ANÁLISIS 2: CLIENTES QUE NECESITAN ATENCIÓN
 // =====================================================
 //
-// DESCRIPCIÓN: Encontrar clientes que aún no han realizado compras
+// 👥 SITUACIÓN DE NEGOCIO: Identificar clientes que se registraron
+// pero aún no han realizado su primera compra. Estos son clientes
+// potenciales que necesitan atención especial para convertirlos.
 //
-// PASO A PASO:
-// 1. Usamos find() para buscar en la colección clientes
-// 2. $size: 0 significa que el array "compras" está vacío
-// 3. Esto identifica clientes nuevos o inactivos
+// 🎯 ESTRATEGIA DE RETENCIÓN:
+// - Clientes sin compras = oportunidades de venta
+// - Puedes enviar ofertas especiales
+// - Necesitan motivación para su primera compra
+// - Son candidatos para programas de fidelización
 //
-// RESULTADO ESPERADO: Deberías ver clientes con array de compras vacío
-// (aunque en este caso todos tienen compras, excepto Mario Mendoza)
+// 🔍 QUÉ BUSCAMOS: Clientes con array de compras vacío
+// - $size: 0 significa que no han comprado nada
+// - Esto identifica clientes nuevos o inactivos
+// - Útil para campañas de marketing dirigidas
+//
+// 📊 RESULTADO ESPERADO: Deberías ver clientes como:
+// - Mario Mendoza (cliente nuevo registrado hoy)
+// - Otros clientes que no han comprado aún
+// - Lista para estrategias de activación
 
 db.clientes.find({ "compras": { $size: 0 } })
 
