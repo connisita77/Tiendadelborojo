@@ -1021,6 +1021,6 @@ Este proyecto "La Tienda del Borojó" demuestra la implementación completa de u
 ---
 
 <p align="center">
-  Developed with ❤️ by Estudiante de Base de Datos<br>
+  Developed with ❤️ by Estudiantes de Bases de Datos<br>
   🔥 <b><a href="https://github.com/DanielSantiagoV">Visit my GitHub</a></b> 🚀
 </p>
